@@ -1,9 +1,10 @@
-import { Injectable, HttpServer, HttpService } from '@nestjs/common';
+import { Injectable, HttpService } from '@nestjs/common';
 import { StructuredLogDto } from '../dtos/structured-log';
 
 @Injectable()
+/// Used to send structured logs to Humio
 export class StructuredLogService {
-  constructor(private readonly httpService: HttpService) {}
+  constructor(private readonly httpService: HttpService) { }
 
   async sendLogs(logs: StructuredLogDto[]): Promise<boolean> {
     try {

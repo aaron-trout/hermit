@@ -2,8 +2,9 @@ import { Injectable, HttpService } from '@nestjs/common';
 import { UnstructuredLogDto } from '../dtos/unstructured-log';
 
 @Injectable()
+/// Used to send unstructured logs to Humio
 export class UnstructuredLogService {
-  constructor(private readonly httpService: HttpService) {}
+  constructor(private readonly httpService: HttpService) { }
 
   async sendLogs(logs: UnstructuredLogDto): Promise<boolean> {
     try {
